@@ -66,6 +66,7 @@ header .cart .cart__info img {
   margin: 5rem auto;
   display: flex;
   justify-content: space-between;
+  gap: 4rem;
 }
 
 .products__showcase {
@@ -75,39 +76,65 @@ header .cart .cart__info img {
 
 .products__showcase .main-product {
   width: 100%;
+  border-radius: 1rem;
+}
+
+.products__showcase-images {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.products__showcase-images img {
+  width: 22%;
+  border-radius: 10px;
 }
 
 .products__info {
   width: 50%;
-  margin: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 2rem 0 16rem 0;
+  margin: 4.5rem 0 0 0;
 }
 
-.products__info h2 {
+.products__info-small {
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.products__info-title {
   font-size: 2.7rem;
+  margin-top: 0.9rem;
 }
 
 .products__info p {
   word-spacing: 2px;
   line-height: 1.5rem;
+  margin-top: 2rem;
 }
 
 .products__info-price div {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .products__info-price #discount {
   margin: 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.products__info-price #old-price {
+  font-weight: 700;
 }
 
 .product__info-btns {
   display: flex;
   justify-content: space-between;
+  margin-top: 1.5rem;
 }
 
 .product__info-btns div {
