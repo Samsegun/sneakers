@@ -19,8 +19,8 @@
         <!-- title -->
         <div class="title">
           <h1 class="title__header">sneakers</h1>
-          <nav class="title__list">
-            <ul>
+          <nav>
+            <ul class="title__list">
               <li><a href="#">Collections</a></li>
               <li><a href="#">Men</a></li>
               <li><a href="#">Women</a></li>
@@ -52,7 +52,11 @@
         <div class="products">
           <div class="products__showcase">
             <div class="products__showcase-image">
-              <img src="images/image-product-1.jpg" alt="sneakers" />
+              <img
+                src="images/image-product-1.jpg"
+                class="main-product"
+                alt="sneakers"
+              />
             </div>
             <div class="products__showcase-images">
               <img src="images/image-product-1-thumbnail.jpg" alt="sneakers" />
@@ -76,7 +80,7 @@
             <div class="products__info-price">
               <div>
                 <h3>$125.00</h3>
-                <small>50%</small>
+                <small id="discount">50%</small>
               </div>
               <small><del>$250.00</del></small>
             </div>
