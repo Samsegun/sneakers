@@ -10,11 +10,14 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="dist/css/lightbox.min.css" />
+    <script src="dist/js/lightbox-plus-jquery.js" defer></script>
+    <script src="js/app.js" defer></script>
     <title>Sneakers</title>
   </head>
   <body>
     <div class="backdrop close"></div>
-    <div class="mobile-nav close">
+    <div class="mobile-nav">
       <nav>
         <ul class="mobile-nav__menu">
           <li><a href="#">Collections</a></li>
@@ -25,7 +28,9 @@
         </ul>
       </nav>
 
-      <button class="close-btn">X</button>
+      <button class="close-btn">
+        <img src="images/icon-close.svg" alt="close button" />
+      </button>
     </div>
     <div class="container">
       <!-- header -->
@@ -117,18 +122,56 @@
         <div class="products">
           <div class="products__showcase">
             <div class="products__showcase-image">
-              <img
-                src="images/image-product-1.jpg"
-                class="main-product"
-                alt="sneakers"
-              />
+              <a
+                href="images/image-product-1.jpg"
+                data-lightbox="sneakers"
+                data-title="Limited Edition"
+              >
+                <img
+                  src="images/image-product-1.jpg"
+                  class="main-product"
+                  alt="sneakers"
+              /></a>
+            </div>
+
+            <div class="close">
+              <a
+                href="images/image-product-2.jpg"
+                data-lightbox="sneakers"
+                data-title="Limited Edition"
+              >
+                <img
+                  src="images/image-product-2.jpg"
+                  class="main-product"
+                  alt="sneakers"
+              /></a>
+              <a
+                href="images/image-product-3.jpg"
+                data-lightbox="sneakers"
+                data-title="Limited Edition"
+              >
+                <img
+                  src="images/image-product-3.jpg"
+                  class="main-product"
+                  alt="sneakers"
+              /></a>
+              <a
+                href="images/image-product-4.jpg"
+                data-lightbox="sneakers"
+                data-title="Limited Edition"
+              >
+                <img
+                  src="images/image-product-4.jpg"
+                  class="main-product"
+                  alt="sneakers"
+              /></a>
             </div>
 
             <div class="slide-btns">
-              <button>
+              <button id="previous">
                 <img src="images/icon-previous.svg" alt="previous image" />
               </button>
-              <button>
+              <button id="next">
                 <img src="images/icon-next.svg" alt="next image" />
               </button>
             </div>
