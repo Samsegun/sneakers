@@ -77,7 +77,12 @@
           </div>
         </div>
 
-        <div class="cart-pop-up close">
+        <!--  to include dark mode on future date -->
+        <!-- <div class="dark-btn">
+          <span></span>
+        </div> -->
+
+        <div class="cart-pop-up">
           <h2>Cart</h2>
           <hr />
           <div class="cart-pop-up__desc">
@@ -87,7 +92,7 @@
 
             <div class="live-cart">
               <ul>
-                <!-- <li class="cart-products">
+                <li class="cart-products">
                   <div class="cart-products__img">
                     <img
                       src="images/image-product-1-thumbnail.jpg"
@@ -109,7 +114,7 @@
                       <img src="images/icon-delete.svg" alt="delete" />
                     </button>
                   </div>
-                </li> -->
+                </li>
               </ul>
               <button id="check-out" class="close">Checkout</button>
             </div>
@@ -126,45 +131,42 @@
                 href="images/image-product-1.jpg"
                 data-lightbox="sneakers"
                 data-title="Limited Edition"
-              >
-                <img
+                id="main-image"
+                ><img
                   src="images/image-product-1.jpg"
-                  class="main-product"
                   alt="sneakers"
-              /></a>
-            </div>
-
-            <div class="close">
+                  class="one main-product product-toggle"
+                />
+              </a>
               <a
                 href="images/image-product-2.jpg"
                 data-lightbox="sneakers"
                 data-title="Limited Edition"
-              >
-                <img
+                ><img
                   src="images/image-product-2.jpg"
-                  class="main-product"
                   alt="sneakers"
-              /></a>
+                  class="two main-product product-toggle close"
+                />
+              </a>
               <a
                 href="images/image-product-3.jpg"
                 data-lightbox="sneakers"
                 data-title="Limited Edition"
-              >
-                <img
+                ><img
                   src="images/image-product-3.jpg"
-                  class="main-product"
                   alt="sneakers"
+                  class="three main-product product-toggle close"
               /></a>
               <a
                 href="images/image-product-4.jpg"
                 data-lightbox="sneakers"
                 data-title="Limited Edition"
-              >
-                <img
+                ><img
                   src="images/image-product-4.jpg"
-                  class="main-product"
                   alt="sneakers"
-              /></a>
+                  class="four main-product product-toggle close"
+                />
+              </a>
             </div>
 
             <div class="slide-btns">
@@ -177,29 +179,37 @@
             </div>
 
             <div class="products__showcase-images">
-              <div>
+              <div class="thumbnails" id="one">
                 <img
                   src="images/image-product-1-thumbnail.jpg"
                   alt="sneakers"
+                  class="sneakers"
                 />
+                <div></div>
               </div>
-              <div>
+              <div class="thumbnails" id="two">
                 <img
                   src="images/image-product-2-thumbnail.jpg"
                   alt="sneakers"
+                  class="sneakers"
                 />
+                <div></div>
               </div>
-              <div>
+              <div class="thumbnails" id="three">
                 <img
                   src="images/image-product-3-thumbnail.jpg"
                   alt="sneakers"
+                  class="sneakers"
                 />
+                <div></div>
               </div>
-              <div>
+              <div class="thumbnails" id="four">
                 <img
                   src="images/image-product-4-thumbnail.jpg"
                   alt="sneakers"
+                  class="sneakers"
                 />
+                <div></div>
               </div>
             </div>
           </div>

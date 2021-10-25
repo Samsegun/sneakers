@@ -20,23 +20,20 @@ body {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
-  transition: background 500ms ease-out;
 }
 
 .mobile-nav {
   position: fixed;
   z-index: 2;
-  width: 70%;
+  width: 0;
   height: 100vh;
-  background: blue;
-  transition: transform 300ms ease-in-out;
-  transform: translateX(-105%);
-  /* visibility: hidden; */
+  background: var(--white);
+  overflow-x: hidden;
+  transition: width 400ms linear;
 }
 
 .mobile-nav.active {
-  transform: translateX(0%);
-  /* visibility: visible; */
+  width: 50%;
 }
 
 .mobile-nav__menu {
@@ -187,14 +184,48 @@ header .cart .cart__info img:hover {
   border: 2px solid var(--orange);
 }
 
+/* to include dark mode on future date */
+/* 
+header .dark-btn {
+  position: absolute;
+  display: flex;
+  width: 45px;
+  padding: 2px 3px;
+  background: #ccc;
+  right: 100px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+header .dark-btn span {
+  background: var(--white);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+header .dark-btn.on {
+  padding-left: 23px;
+  background: black;
+} */
+
 header .cart-pop-up {
   position: absolute;
-  top: 5rem;
+  top: 4rem;
   right: -3rem;
   width: 30%;
   background: var(--white);
   border-radius: 10px;
-  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.281);
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  max-height: 0;
+  transition: max-height 300ms linear, transform 300ms linear;
+}
+
+header .cart-pop-up.height {
+  max-height: 13rem;
+  transform: translateY(1rem);
+  overflow-y: scroll;
 }
 
 header .cart-pop-up__desc {
@@ -256,7 +287,7 @@ header .cart-pop-up .delete-btn {
 
 header .cart-pop-up .delete-btn:hover {
   cursor: pointer;
-  padding: 0.1rem;
+  background: gray;
 }
 
 header .cart-pop-up #check-out {
@@ -270,10 +301,6 @@ header .cart-pop-up #check-out {
   color: var(--white);
   font-weight: 700;
   font-size: 1rem;
-}
-
-.close {
-  display: none;
 }
 
 header .cart-pop-up #check-out:hover {
@@ -303,6 +330,7 @@ header .cart-pop-up #check-out:active {
 .products__showcase .main-product {
   width: 100%;
   border-radius: 1rem;
+  /* transition: close 500ms linear; */
 }
 
 .products__showcase .slide-btns {
@@ -331,13 +359,13 @@ header .cart-pop-up #check-out:active {
   width: 100%;
 }
 
+.products__showcase-images div {
+  position: relative;
+}
+
 .products__showcase-images img {
   width: 100%;
   border-radius: 10px;
-}
-
-.products__showcase-images div {
-  position: relative;
 }
 
 .products__showcase-images div:hover::after {
@@ -349,6 +377,17 @@ header .cart-pop-up #check-out:active {
   top: 0;
   right: 0;
   background: rgba(245, 245, 245, 0.5);
+}
+
+.products__showcase-images .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 237, 224, 0.726);
+  border-radius: 10px;
+  border: 2px solid var(--orange);
+  cursor: pointer;
 }
 
 .info-container {
@@ -487,14 +526,18 @@ button {
   color: var(--orange);
 }
 
-@keyframes flow-in {
+.close {
+  display: none;
+}
+
+/* @keyframes flow-in {
   from {
     background: rgba(0, 0, 0, 0);
   }
   to {
     background: rgba(0, 0, 0, 0.7);
   }
-}
+} */
 
 @media (min-width: 1190px) and (max-width: 1230px) {
   header .title {
@@ -557,6 +600,7 @@ button {
     right: 0;
     width: 90%;
     margin: 1rem;
+    z-index: 1;
   }
   header .cart-pop-up h2 {
     font-size: 1.5rem;
