@@ -68,6 +68,7 @@
                   fill-rule="nonzero"
                 />
               </svg>
+              <span class="close" id="active-products"></span>
             </button>
           </div>
           <div class="cart__info">
@@ -86,13 +87,10 @@
           <h2>Cart</h2>
           <hr />
           <div class="cart-pop-up__desc">
-            <div class="empty-cart">
-              <p>Your cart is empty.</p>
-            </div>
-
-            <div class="live-cart">
+            <div>
               <ul>
-                <li class="cart-products">
+                <li class="empty-cart">Your cart is empty.</li>
+                <li class="close cart-products live-cart">
                   <div class="cart-products__img">
                     <img
                       src="images/image-product-1-thumbnail.jpg"
@@ -103,9 +101,9 @@
                   <div class="cart-products__info">
                     <p>
                       Fall Limited Edition Sneakers <br />
-                      <span class="price">$125.00</span> x
-                      <span class="quantity">3</span>
-                      <span class="total">$375.00</span>
+                      <small class="price">$<span>0</span></small> x
+                      <small class="quantity">0</small>
+                      <small class="total">$<span>0</span>.00</small>
                     </p>
                   </div>
 
@@ -228,7 +226,7 @@
               </p>
               <div class="products__info-price">
                 <div>
-                  <h3>$125.00</h3>
+                  <h3>$<span>125.00</span></h3>
                   <small id="discount">50%</small>
                 </div>
                 <small id="old-price"><del>$250.00</del></small>
@@ -236,7 +234,7 @@
 
               <div class="product__info-btns">
                 <div>
-                  <button class="qty-btn" id="decrease">
+                  <button class="qty-btn" id="decrease" disabled>
                     <svg
                       width="12"
                       height="4"
@@ -252,8 +250,8 @@
                       <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
                     </svg>
                   </button>
-                  <small>0</small>
-                  <button class="qty-btn" id="increase">
+                  <small id="quantity">0</small>
+                  <button class="qty-btn" id="increase" disabled>
                     <svg
                       width="12"
                       height="12"
