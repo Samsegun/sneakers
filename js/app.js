@@ -52,6 +52,12 @@ class UI {
   static dontDeleteCartItem = () => {
     this.displayModal();
   };
+
+  static removeImagesMobileMode() {
+    for (const eachProduct of products) {
+      eachProduct.classList.add("close");
+    }
+  }
 }
 
 cartBtn.addEventListener("click", UI.displayCart);
@@ -142,3 +148,38 @@ cartDeleteBtn.addEventListener("click", UI.displayModal);
 
 modalYes.addEventListener("click", UI.deleteCartItem);
 modalNo.addEventListener("click", UI.dontDeleteCartItem);
+
+let productImg = 0;
+
+// scroll pictures in mobile view
+previousBtn.addEventListener("click", () => {
+  UI.removeImagesMobileMode();
+
+  productImg--;
+  if (productImg < 0) {
+    productImg = products.length - 1;
+  }
+  products[productImg].classList.remove("close");
+});
+
+nextBtn.addEventListener("click", () => {
+  UI.removeImagesMobileMode();
+
+  productImg++;
+  if (productImg > products.length - 1) {
+    productImg = 0;
+  }
+
+  products[productImg].classList.remove("close");
+});
+
+// setInterval(() => {
+//   UI.removeImagesMobileMode();
+
+//   productImg++;
+//   if (productImg > products.length - 1) {
+//     productImg = 0;
+//   }
+
+//   products[productImg].classList.remove("close");
+// }, 2000);
