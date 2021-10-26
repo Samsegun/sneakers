@@ -62,6 +62,58 @@ body {
   cursor: pointer;
 }
 
+.modal {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: auto;
+  height: 0;
+  overflow: hidden;
+  transform: translateX(-9.7rem);
+  font-size: 2rem;
+  z-index: 3;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  transition: height 200ms linear, transform 100ms linear;
+}
+
+.modal.show {
+  transform: translate(-9.7rem, 1.5rem);
+  height: 14rem;
+}
+
+.modal p {
+  text-align: center;
+  border-bottom: 2px solid var(--grayish-blue);
+  padding: 1rem;
+}
+
+.modal div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  text-align: center;
+}
+
+.modal div button {
+  font-size: 2rem;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--grayish-blue);
+}
+
+.modal div #yes {
+  background: rgb(20, 73, 20);
+}
+
+.modal div #no {
+  background: rgb(155, 37, 33);
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -333,7 +385,6 @@ header .cart-pop-up #check-out:active {
 .products__showcase .main-product {
   width: 100%;
   border-radius: 1rem;
-  /* transition: close 500ms linear; */
 }
 
 .products__showcase .slide-btns {
@@ -584,6 +635,10 @@ button {
 /* mobile view */
 
 @media (max-width: 827px) {
+  .modal.show {
+    height: 16.4rem;
+    transform: translate(-6.7rem, 1.5rem);
+  }
   .container {
     width: 100%;
     transition: all 400ms ease-in-out;

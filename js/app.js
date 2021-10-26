@@ -1,34 +1,10 @@
-const cartBtn = document.querySelector(".cart .cart__btn");
-const mobileMenuCloseBtn = document.querySelector(".mobile-nav .close-btn");
-const mobileMenuBtn = document.querySelector(".mobile-menu button");
-const previousBtn = document.getElementById("previous");
-const nextBtn = document.getElementById("next");
-const mainImage = document.getElementById("main-image");
-const products = document.querySelectorAll(
-  ".products__showcase .product-toggle"
-);
-const thumbnails = document.querySelectorAll(".products__showcase .thumbnails");
-const addToCart = document.getElementById("add-to-cart");
-const decreaseBtn = document.getElementById("decrease");
-const increaseBtn = document.getElementById("increase");
-const qtyBtn = document.getElementById("quantity");
-const cartNotifier = document.getElementById("active-products");
-const cartItems = document.querySelector(".cart-pop-up ul");
-const emptyCart = document.querySelector(".cart-pop-up ul .empty-cart");
-const liveCart = document.querySelector(".cart-pop-up ul .live-cart");
-const cartPrice = document.querySelector(".cart-pop-up ul .price span");
-const cartQty = document.querySelector(".cart-pop-up ul .quantity");
-const cartTotal = document.querySelector(".cart-pop-up ul .total span");
-const cartDeleteBtn = document.querySelector(".cart-pop-up ul .delete-btn");
-const cartCheckOut = document.querySelector(".cart-pop-up #check-out");
-const price = document.querySelector(".products .products__info-price h3 span");
-
 let count = 0;
 
 class UI {
   static container = document.querySelector(".container");
   static backDrop = document.querySelector(".backdrop");
   static mobileMenu = document.querySelector(".mobile-nav");
+  static modal = document.querySelector(".modal");
 
   static displayCart() {
     const cart = document.querySelector("header .cart-pop-up");
@@ -45,6 +21,36 @@ class UI {
     this.container.classList.toggle("slide-right");
     this.backDrop.classList.toggle("close");
     this.mobileMenu.classList.toggle("active");
+  };
+
+  static displayModal = () => {
+    this.backDrop.classList.toggle("close");
+    this.modal.classList.toggle("show");
+  };
+
+  static deleteCartItem = () => {
+    count = 0;
+
+    cartPrice.textContent = count;
+    cartQty.textContent = count;
+    cartTotal.textContent = count;
+    qtyBtn.textContent = count;
+    cartNotifier.classList.add("close");
+
+    addToCart.disabled = false;
+    decreaseBtn.disabled = true;
+    increaseBtn.disabled = true;
+
+    cartCheckOut.classList.add("close");
+
+    liveCart.classList.add("close");
+    emptyCart.classList.remove("close");
+
+    this.displayModal();
+  };
+
+  static dontDeleteCartItem = () => {
+    this.displayModal();
   };
 }
 
@@ -132,21 +138,7 @@ increaseBtn.addEventListener("click", () => {
   }
 });
 
-cartDeleteBtn.addEventListener("click", () => {
-  count = 0;
+cartDeleteBtn.addEventListener("click", UI.displayModal);
 
-  cartPrice.textContent = count;
-  cartQty.textContent = count;
-  cartTotal.textContent = count;
-  qtyBtn.textContent = count;
-  cartNotifier.classList.add("close");
-
-  addToCart.disabled = false;
-  decreaseBtn.disabled = true;
-  increaseBtn.disabled = true;
-
-  cartCheckOut.classList.add("close");
-
-  liveCart.classList.add("close");
-  emptyCart.classList.remove("close");
-});
+modalYes.addEventListener("click", UI.deleteCartItem);
+modalNo.addEventListener("click", UI.dontDeleteCartItem);
