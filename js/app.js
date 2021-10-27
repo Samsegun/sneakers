@@ -1,4 +1,5 @@
 let count = 0;
+let productImg = 0;
 
 class UI {
   static container = document.querySelector(".container");
@@ -149,8 +150,6 @@ cartDeleteBtn.addEventListener("click", UI.displayModal);
 modalYes.addEventListener("click", UI.deleteCartItem);
 modalNo.addEventListener("click", UI.dontDeleteCartItem);
 
-let productImg = 0;
-
 // scroll pictures in mobile view
 previousBtn.addEventListener("click", () => {
   UI.removeImagesMobileMode();
@@ -172,14 +171,3 @@ nextBtn.addEventListener("click", () => {
 
   products[productImg].classList.remove("close");
 });
-
-// setInterval(() => {
-//   UI.removeImagesMobileMode();
-
-//   productImg++;
-//   if (productImg > products.length - 1) {
-//     productImg = 0;
-//   }
-
-//   products[productImg].classList.remove("close");
-// }, 2000);
