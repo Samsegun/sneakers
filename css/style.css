@@ -24,8 +24,10 @@ body {
 
 .mobile-nav {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
-  width: 50%;
+  width: 60%;
   height: 100vh;
   background: var(--white);
   transform: translateX(-101%);
@@ -154,11 +156,11 @@ header .title {
   justify-content: space-between;
 }
 
-header .title h1 {
+header .title div {
   font-weight: 700;
 }
 
-header .title h1 a {
+header .title div a {
   text-decoration: none;
   color: inherit;
 }
@@ -450,7 +452,7 @@ header .cart-pop-up #check-out:active {
   align-items: center;
 }
 
-.products__info-small {
+.info-container .products__info-small {
   display: block;
   font-size: 0.9rem;
   letter-spacing: 2px;
@@ -633,9 +635,6 @@ button {
   .container {
     width: 100%;
     transition: all 400ms linear;
-  }
-  .container.slide-right {
-    transform: translateX(50%);
   }
   header {
     justify-content: space-around;

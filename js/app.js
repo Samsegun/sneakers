@@ -13,13 +13,11 @@ class UI {
   }
 
   static displayMobileMenu = () => {
-    this.container.classList.toggle("slide-right");
     this.backDrop.classList.toggle("close");
     this.mobileMenu.classList.toggle("active");
   };
 
   static closeMobileMenu = () => {
-    this.container.classList.toggle("slide-right");
     this.backDrop.classList.toggle("close");
     this.mobileMenu.classList.toggle("active");
   };
