@@ -91,6 +91,7 @@ thumbnails.forEach(thumbnail => {
 
 addToCart.addEventListener("click", () => {
   count++;
+  addToCart.textContent = "In cart";
   addToCart.disabled = true;
   qtyBtn.textContent = count;
 
@@ -120,6 +121,7 @@ decreaseBtn.addEventListener("click", () => {
     cartNotifier.classList.add("close");
 
     decreaseBtn.disabled = true;
+    addToCart.textContent = "Add to cart";
     addToCart.disabled = false;
   } else {
     count--;
